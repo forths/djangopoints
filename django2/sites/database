@@ -1,0 +1,5 @@
+### 项目目录下settings.py  DATABASE default
+- ENGINE: Either 'django.db.backends.sqlite3', 'django.db.backends.postgresql', 
+  'django.db.backends.mysql', or 'django.db.backends.oracle'. 
+- NAME 数据库名称  sqlite使用绝对路径
+- 
