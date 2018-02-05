@@ -1,0 +1,31 @@
+django-admin startproject mysite
+django-admin startapp news
+在settings.py中注册应用，在工程mysite目录下的settings.py的INSTALLED_APPS中添加appname
+1.设计模型 在对应应用下的models.py文件中进行修改
+
+2.install 生成数据表，默认sqlite3（可能还有 python manage.py makemigrations这一步？）
+https://docs.djangoproject.com/en/2.0/topics/migrations/
+python manage.py migrate
+
+3.some api
+from news.models import Reporter, Article  # 导入对应模型
+(1)查询获取所有元素
+Reporter.objects.all() --->返回<QuerySet []>
+(2)插入数据
+r = Reporter(full_name='John Smith')
+r.save()
+r.id      r.full_name
+from datetime import date
+a = Article(pub_date=date.today(), headline='Django is cool',content='Yeah.', reporter=r)
+a.save()
+(3)查询指定元素 get只返回一个元素，多则抛出异常。
+Reporter.objects.get(id=1)   ----> 返回一个Reporter对象,不存在抛出异常
+Reporter.objects.get(full_name__startswith='John')
+Reporter.objects.get(full_name__contains='mith')
+(4)外键ForeignKey
+r = a.reporter
+r.article_set.all() ---> QuerySet
+(5)查询多条
+Article.objects.filter(reporter__full_name__startswith='John')
+----->>>   <QuerySet [<Article: Django is cool>]>
+

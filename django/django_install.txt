@@ -1,0 +1,14 @@
+先安装python
+2.0后不支持python2
+
+查看django版本   命令行
+python -c "import django; print(django.get_version())"
+查看django路径
+python -c "import django; print(django.__path__)"
+
+pip或者虚拟环境下 命令行，可以指定版本，默认最新版本
+pip install Django
+
+github 代码安装
+git clone https://github.com/django/django.git
+pip install -e django/
