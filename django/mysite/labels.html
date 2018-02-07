@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans" >
+<head>
+<title>选择 label 来修改 | Django 站点管理员</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+  
+  
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+<body class=" app-mghy_gameai model-label change-list"
+  data-admin-utc-offset="28800">
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+<h1 id="site-name"><a href="/admin/">视频标注工具</a></h1>
+        </div>
+        <div id="user-tools">
+                欢迎，
+                <strong>True</strong>.
+                    <a href="/">查看站点</a> 
+        </div>  
+    </div>
+    <!-- END Header -->
+<div class="breadcrumbs">
+<a href="/admin/">首页</a>
+&rsaquo; <a href="/admin/mghy_gameai/">Mghy_Gameai</a>
+&rsaquo; Labels
+</div>
+    <!-- Content -->
+    <div id="content" class="flex">
+        <h1>选择 label 来修改</h1>
+  <div id="content-main">
+        <ul class="object-tools">
+            <li>
+              <a href="/label/add/" class="addlink">
+                增加 label
+              </a>
+            </li>
+            
+          
+        </ul>
+    
+    
+    <div class="module" id="changelist">
+
+      <form id="changelist-form" method="post" novalidate><input type='hidden' name='csrfmiddlewaretoken' value='8Yyk7XGdJj7e445rAnT28eSxpP5RERMN7RtNDU5UWMAlDlHdUKRI7rP6DLbHXUmD' />
+          
+<div class="actions">
+
+</select></label><input type="hidden" name="select_across" value="0" class="select-across" />
+    <button type="submit" class="button" title="运行选中的动作" name="index" value="0">执行</button>
+    
+      <!--   <span class="action-counter" data-actions-icnt="100">100 个中 0 个被选</span>
+        
+        <span class="all">选中了 254 个</span>
+        <span class="question">
+            <a href="#" title="点击此处选择所有页面中包含的对象。">选中所有的 254 个 labels</a>
+        </span> -->
+        <span class="clear"><a href="#">清除选中</a></span>
+</div>
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
+
+<th scope="col"  class="column-__str__">
+   
+   <div class="text"><span>Label</span></div>
+   <div class="clear"></div>
+</th>
+</tr>
+</thead>
+<tbody>
+{% for label in labels %}
+<tr class="row1"><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="291" class="action-select" /></td><th class="field-__str__"><a href="/admin/mghy_gameai/label/291/change/">label[1]</a></th></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+      </form>
+    </div>
+  </div>
+        <br class="clear" />
+    </div>
+</div>
+</body>
+</html>

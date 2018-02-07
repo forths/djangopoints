@@ -29,3 +29,31 @@ r.article_set.all() ---> QuerySet
 Article.objects.filter(reporter__full_name__startswith='John')
 ----->>>   <QuerySet [<Article: Django is cool>]>
 
+4.后台管理 admin
+应用的admin.py中
+from django.contrib import admin
+from . import models
+admin.site.register(models.Article)
+
+5.urls urlconf
+mysite/news/urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('articles/<int:year>/', views.year_archive),
+    path('articles/<int:year>/<int:month>/', views.month_archive),
+    path('articles/<int:year>/<int:month>/<int:pk>/', views.article_detail),
+]
+
+6.views 具体处理
+mysite/news/views.py
+
+7.模板 templates
+
+8.Static Files配置
+STATIC_ROOT   example:"/var/www/example.com/static/"绝对路径，存放static文件。
+
+STATIC_URL    example:"/static/" or "http://static.example.com/"
+
+
+
